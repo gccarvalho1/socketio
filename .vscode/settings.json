@@ -1,0 +1,6 @@
+{
+    "prettier.endOfLine": "lf",
+    "prettier.quoteProps": "as-needed",
+    "prettier.resolveGlobalModules": false,
+    "vs-code-prettier-eslint.prettierLast": true
+}

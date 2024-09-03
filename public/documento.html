@@ -5,33 +5,47 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-  <title>Documento</title>
+  <title>Chat</title>
 </head>
 
 <body class="mt-3">
   <header>
-    <h1 class="display-4 mb-4 text-center" id="titulo-documento">Documento sem título</h1>
+    <h1 class="display-4 mb-4 text-center" id="titulo-documento">Chat</h1>
   </header>
 
   <main class="w-75 mx-auto">
-    <textarea id="editor-texto" class="form-control mb-4" style="height: 400px; resize: none;"></textarea>
+    <!-- Campo para o nome do usuário -->
+    <div class="mb-3">
+      <input type="text" id="nome-usuario" class="form-control" placeholder="Digite seu nome">
+      <div id="erro-mensagem" class="erro-msg"></div>
+    </div>
+
+    <!-- Área para exibir as mensagens do chat -->
+    <div id="chat-mensagens" class="border p-3 mb-4"></div>
+
+    <!-- Campo de texto para escrever a mensagem -->
+    <textarea id="editor-texto" class="form-control mb-4" placeholder="Digite sua mensagem"></textarea>
 
     <div class="d-flex justify-content-between">
       <a href="index.html" class="btn btn-primary">Voltar</a>
       <button id="excluir-documento" class="btn btn-outline-danger">Excluir documento</button>
     </div>
   </main>
+  <footer>
+    Criado por Alura e desenvolvido por <a href="https://www.linkedin.com/in/rogerio-gabriel-ba3102194/"
+      target="_blank">Rogério Gabriel</a>
+  </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="./documento.js" type="module"></script>
-
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./documento.js" type="module"></script>
 </body>
 
 </html>

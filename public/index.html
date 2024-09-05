@@ -6,30 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  
-  <title>Alura Docs</title>
+
+  <title>Web-Chat</title>
 </head>
 
 <body class="col-lg-6 mt-3 mx-auto">
   <header>
-    <h1 class="text-center display-2 mb-4">AluraDocs</h1>
+    <h1 class="text-center display-2 mb-4">Web-Chat</h1>
   </header>
 
   <main class="w-75 mx-auto">
-    <div id="lista-documentos" class="list-group mb-4">
-      <a href="documento.html?nome=Chat-1" class="list-group-item list-group-item-action">
-        Chat-1
-      </a>
-      <a href="documento.html?nome=Chat-2" class="list-group-item list-group-item-action">
-        Chat-2
-      </a>
-      <a href="documento.html?nome=Chat-3" class="list-group-item list-group-item-action">
-        Chat-3
-      </a>
-    </div>
-
+    <div id="lista-documentos" class="list-group mb-4"></div>
     <form id="form-adiciona-documento" class="rowg-3">
       <div class="col-md-6">
+        <div id="erro-mensagem-doc" class="erro-msg-doc">Documento já existe!</div>
         <label class="visually-hidden" for="input-documento">Nome do documento</label>
         <input type="text" class="form-control" id="input-documento" placeholder="Documento..." required>
       </div>
@@ -39,6 +29,8 @@
       </div>
     </form>
   </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./index.js" type="module"></script>
 </body>
 
 </html>

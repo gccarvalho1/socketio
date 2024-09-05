@@ -123,6 +123,10 @@ footer {
   color: red
 
 }
+.erro-msg-doc {
+  color: red;
+  display: none;
+}
 
 /* Responsividade */
 @media (max-width: 768px) {

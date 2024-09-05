@@ -5,6 +5,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import http from 'http';
 import { Server } from 'socket.io';
+import './dbConnect.js';
 
 dotenv.config();
 
@@ -23,5 +24,3 @@ servidorHttp.listen(porta, () =>
 );
 const io = new Server(servidorHttp);
 export default io;
-
-

@@ -16,21 +16,16 @@ selecionarDocumento(nomeDocumento);
 
 textoEditor.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
+        e.preventDefault();
         const nomeUsuario = document.getElementById('nome-usuario').value;
         const mensagem = textoEditor.value;
 
         if (nomeUsuario && mensagem) {
-            // Envia a mensagem pelo socket
+            chatMensagem.textContent += `\n${nomeUsuario}: ${mensagem}`;
             emitirTextoEditor({
-                texto: `${nomeUsuario}: ${mensagem}`,
+                texto: chatMensagem.textContent,
                 nomeDocumento,
             });
-            // Adiciona a mensagem ao chat localmente
-            // const novaMensagem = `${nomeUsuario}: ${mensagem}`;
-            // chatMensagem.appendChild(document.createTextNode(novaMensagem));
-            // chatMensagem.appendChild(document.createElement('br'));
-
-            // Limpa o campo de texto
             textoEditor.value = '';
         }
         if (nomeUsuario === '') {
@@ -43,10 +38,8 @@ textoEditor.addEventListener('keypress', function (e) {
 });
 
 function atualizaTextoEditor(texto) {
-    // FAZ O BROADCAST
-    chatMensagem.textContent = texto;
-    // chatMensagem.appendChild(document.createTextNode(texto));
-    // chatMensagem.appendChild(document.createElement('br'));
+    // Adiciona o texto ao novo elemento
+    chatMensagem.innerHTML = texto;
 }
 
 export { atualizaTextoEditor };

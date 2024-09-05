@@ -60,26 +60,8 @@ main {
   border-radius: 12px;
   padding: 1rem;
   margin-bottom: 1.5rem;
+  white-space: pre-wrap; 
   box-shadow: inset 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Estilo das mensagens no chat */
-#chat-mensagens .message {
-  padding: 0.75rem;
-  margin-bottom: 0.75rem;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#chat-mensagens .message.sender {
-  background: #d1e7dd;
-  align-self: flex-end;
-}
-
-#chat-mensagens .message.receiver {
-  background: #f8d7da;
-  align-self: flex-start;
 }
 
 /* Campo de texto para mensagem */
@@ -155,4 +137,48 @@ footer {
   #chat-mensagens {
     min-height: 250px;
   }
+}
+
+#lista-documentos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Adiciona um espaçamento entre os itens */
+  
+}
+.list-group-item { 
+  background-color: #e9ecef;
+  border: 1px solid #d0d8e0;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #004a7c;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.list-group-item:hover {
+  background-color: #004a7c;
+  color: #fff;
+}
+.visually-hidden {
+  display: none;
+}
+
+.form-control {
+  border: 1px solid #d0d8e0;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  min-height: 40px;
+  width: 400px;
+  resize: none;
+  margin-bottom: 1.0rem;
+}
+
+.rowg-3{
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-between; /* Empurra os itens para as extremidades */
+  align-items: baseline ; /* Alinha verticalmente ao centro */
 }

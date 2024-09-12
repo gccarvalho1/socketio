@@ -23,6 +23,3 @@ Este projeto implementa um chat multiusuário em tempo real utilizando Node.js, 
 * **Envio e recebimento de mensagens:** Envie e receba mensagens em tempo real.
 * **Salas de chat:** Crie e participe de salas de chat personalizadas.
 
-## Ícones
-![chat-icon](https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-chat-communication-and-technology-flatart-icons-flat-flatarticons.png) 
-![real-time-icon](https://img.icons8.com/external-icongeek26-flat-icongeek26/64/000000/external-real-time-data-data-science-icongeek26-flat-icongeek26.png)

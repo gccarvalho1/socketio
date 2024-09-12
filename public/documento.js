@@ -1,4 +1,5 @@
 import {
+    emitirExcluirDocumento,
     emitirTextoEditor,
     selecionarDocumento,
 } from './socket-front-documento.js';
@@ -10,6 +11,7 @@ const textoEditor = document.getElementById('editor-texto');
 const tituloDocumento = document.getElementById('titulo-documento');
 const chatMensagem = document.getElementById('chat-mensagens');
 const erroMensagem = document.getElementById('erro-mensagem');
+const buttonExcluir = document.getElementById('excluir-documento');
 
 tituloDocumento.textContent = nomeDocumento || 'Documento sem título';
 selecionarDocumento(nomeDocumento);
@@ -39,7 +41,18 @@ textoEditor.addEventListener('keypress', function (e) {
 
 function atualizaTextoEditor(texto) {
     // Adiciona o texto ao novo elemento
-    chatMensagem.innerHTML = texto;
+    chatMensagem.textContent = texto;
 }
 
-export { atualizaTextoEditor };
+buttonExcluir.addEventListener('click', () => {
+    emitirExcluirDocumento(nomeDocumento);
+});
+
+function alertarERedirecionar(nome) {
+    if (nome === nomeDocumento) {
+        alert(`O documento ${nome} foi apagado!`);
+        window.location.href = '/';
+    }
+}
+
+export { atualizaTextoEditor, alertarERedirecionar };

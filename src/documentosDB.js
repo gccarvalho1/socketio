@@ -15,4 +15,32 @@ function atualizaDocumento(texto, nome) {
     );
     return atualizacao;
 }
-export { encontrarDocumento, atualizaDocumento };
+
+function emitirDocumentos() {
+    const resultados = documentosColecao.find().toArray();
+
+    return resultados;
+}
+
+function inserirDocumento(nome) {
+    const resultados = documentosColecao.insertOne({
+        nome,
+        texto: '',
+    });
+    return resultados;
+}
+
+function excluirDocumento(nome) {
+    const excluir = documentosColecao.deleteOne({
+        nome,
+    });
+    return excluir;
+}
+
+export {
+    encontrarDocumento,
+    atualizaDocumento,
+    emitirDocumentos,
+    inserirDocumento,
+    excluirDocumento,
+};
